@@ -36,7 +36,7 @@ const gamesList = [
   {
     id: 3,
     game_cover: "img of cover goes here",
-    game_genre: "Survival Horror",
+    game_genre: "survival-horror",
     name: "Resident Evil 3 remake",
     game_desc: "description goes here",
     game_link: "Link to buy the game goes here",
@@ -44,7 +44,7 @@ const gamesList = [
   {
     id: 4,
     game_cover: "img of cover goes here",
-    game_genre: "Survival Horror",
+    game_genre: "survival-horror",
     name: "horror game",
     game_desc: "description goes here",
     game_link: "Link to buy the game goes here",
@@ -52,7 +52,7 @@ const gamesList = [
   {
     id: 5,
     game_cover: "img of cover goes here",
-    game_genre: "Survival Horror",
+    game_genre: "survival-horror",
     name: "other horror name",
     game_desc: "description goes here",
     game_link: "Link to buy the game goes here",
@@ -73,14 +73,15 @@ class App extends React.Component {
     let genres = [];
 
     this.state.gamesList.forEach((genre) => {
-      if (genre.game === game) {
+      if (genre.game_genre === game) {
         genres.push(genre);
       }
+      console.log(genre);
     });
-
+   
     this.setState({
       genres: genres,
-      toGenre: true,
+      // toGenre: true,
       game: game,
     });
     console.log(game);
