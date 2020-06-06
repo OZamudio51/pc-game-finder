@@ -1,6 +1,29 @@
 import React from "react";
 
 class GenreSelector extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            game: 'First Person Shooter'
+        };
+
+        this.handleGenreSubmit = this.handleGenreSubmit.bind(this);
+    }
+
+    handleGenreSubmit = e => {
+        e.preventDefault();
+
+        if (this.state.game === 'select') {
+            return alert('Please select a genre');
+        }; 
+
+        this.setState({
+            game: e.target.value
+        });
+
+        this.props.updateGenre(e.target.value);
+    }
+
   render() {
     return (
       <div>
@@ -11,6 +34,7 @@ class GenreSelector extends React.Component {
               title="genre"
               className="genre-selection"
               selected="select-a-genre"
+              onChange={this.handleGenreSubmit}
             >
               <option value="select-a-genre" selected disabled>
                 Select a genre

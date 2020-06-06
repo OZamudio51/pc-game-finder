@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameList.css";
 
 class GameList extends React.Component {
   render() {
@@ -6,17 +7,22 @@ class GameList extends React.Component {
 
     return (
       <section>
-        <div style={{ marginBottom: "50px" }}>{games.genre}</div>
-        <div className="game-container">{games.cover}</div>
+        <div>
+          <img
+            className="game-container"
+            src={games.game_cover}
+            alt="cover-art"
+          />
+        </div>
         <div>
           <h4>{games.name}</h4>
         </div>
         <div>
-          <p>{games.desc}</p>
+          <p>{games.game_desc}</p>
         </div>
         <div style={{ marginBottom: "25px" }}>
           <a style={{ fontSize: "15px" }} href="#">
-            {games.link}
+            {games.game_link}
           </a>
         </div>
       </section>
