@@ -1,28 +1,31 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class GenreSelector extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            game: 'First Person Shooter'
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+      game: "First Person Shooter",
+    };
 
-        this.handleGenreSubmit = this.handleGenreSubmit.bind(this);
+    this.handleGenreSubmit = this.handleGenreSubmit.bind(this);
+  }
+
+  handleGenreSubmit = (e) => {
+    e.preventDefault();
+
+    if (this.state.game === "select") {
+      return alert("Please select a genre");
     }
 
-    handleGenreSubmit = e => {
-        e.preventDefault();
+    this.setState({
+      game: e.target.value,
+    });
 
-        if (this.state.game === 'select') {
-            return alert('Please select a genre');
-        }; 
+    this.props.updateGenre(e.target.value);
 
-        this.setState({
-            game: e.target.value
-        });
-
-        this.props.updateGenre(e.target.value);
-    }
+    this.props.history.push(`/genre/${e.target.value}`);
+  };
 
   render() {
     return (
@@ -33,10 +36,10 @@ class GenreSelector extends React.Component {
             <select
               title="genre"
               className="genre-selection"
-              selected="select-a-genre"
+              defaultValue="select-a-genre"
               onChange={this.handleGenreSubmit}
             >
-              <option value="select-a-genre" selected disabled>
+              <option value="select-a-genre" disabled>
                 Select a genre
               </option>
               <option value="first-person-shooter">First Person Shooter</option>
@@ -45,7 +48,8 @@ class GenreSelector extends React.Component {
               <option value="third-person-shooter">Third Person Shooter</option>
               <option value="indie">Indie</option>
               <option value="puzzle">Puzzle</option>
-              <option value="Stealth-based">Stealth based</option>
+              <option value="stealth-based">Stealth based</option>
+              <option value="rts">Real-time Strategy</option>
             </select>
           </form>
         </section>
@@ -54,4 +58,4 @@ class GenreSelector extends React.Component {
   }
 }
 
-export default GenreSelector;
+export default withRouter(GenreSelector);

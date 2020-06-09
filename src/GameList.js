@@ -15,14 +15,15 @@ class GameList extends React.Component {
           />
         </div>
         <div>
-          <h4>{games.name}</h4>
+          <h4>{games.game_name}</h4>
         </div>
         <div>
           <p>{games.game_desc}</p>
         </div>
         <div style={{ marginBottom: "25px" }}>
-          <a style={{ fontSize: "15px" }} href="#">
-            {games.game_link}
+          <a style={{ fontSize: "15px" }} target="_blank" rel="noreferrer noopener" href={games.game_link} >
+
+            Click here to purchase!
           </a>
         </div>
       </section>
