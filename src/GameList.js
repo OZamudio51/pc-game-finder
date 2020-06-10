@@ -4,7 +4,6 @@ import "./GameList.css";
 // GamesList Component
 
 class GameList extends React.Component {
-    
   // Renders the list of games
 
   render() {
@@ -27,7 +26,12 @@ class GameList extends React.Component {
         </div>
         <div style={{ marginBottom: "50px" }}>
           <a
-            style={{ fontSize: "15px" }}
+            style={{
+              fontSize: "15px",
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              width: "100%",
+              color: "white",
+            }}
             target="_blank"
             rel="noreferrer noopener"
             href={games.game_link}

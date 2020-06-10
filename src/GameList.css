@@ -3,4 +3,14 @@ p {
     max-width: 500px;
     font-size: 15px;
     color: white;
+    background-color:rgba(0, 0, 0, 0.7);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h4 {
+    background-color:rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
