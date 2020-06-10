@@ -1,4 +1,4 @@
-# Pc Game Finder
+# PC Game Finder
 
 
 Link to live app: https://pc-game-finder.ozamudio51.now.sh/
