@@ -2,7 +2,6 @@ import React from 'react';
 import GameList from './GameList';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow } from 'enzyme';
-import { TestScheduler } from 'jest';
 
 Enzyme.configure({ adapter: new Adapter() });
 

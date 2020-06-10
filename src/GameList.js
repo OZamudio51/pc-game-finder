@@ -1,7 +1,12 @@
 import React from "react";
 import "./GameList.css";
 
+// GamesList Component
+
 class GameList extends React.Component {
+    
+  // Renders the list of games
+
   render() {
     const { games } = this.props;
 
@@ -15,14 +20,18 @@ class GameList extends React.Component {
           />
         </div>
         <div>
-          <h4>{games.game_name}</h4>
+          <h4 style={{ color: "white" }}>{games.game_name}</h4>
         </div>
         <div>
           <p>{games.game_desc}</p>
         </div>
-        <div style={{ marginBottom: "25px" }}>
-          <a style={{ fontSize: "15px" }} target="_blank" rel="noreferrer noopener" href={games.game_link} >
-
+        <div style={{ marginBottom: "50px" }}>
+          <a
+            style={{ fontSize: "15px" }}
+            target="_blank"
+            rel="noreferrer noopener"
+            href={games.game_link}
+          >
             Click here to purchase!
           </a>
         </div>

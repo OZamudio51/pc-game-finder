@@ -6,12 +6,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  text-align: center;
+}
+
+body {
+  background-size: cover;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://drivetribe.imgix.net/TXu6EQGCQ8WyjpRNUh7XBw');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  max-height: 100%;
+  padding-top: 125px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+main {
+  position: relative;
+  min-height: calc(100vh -  95px - 40px);
 }
 
 
@@ -21,6 +40,93 @@ code {
   display: inline-block;
   height: 375px;
   width: 265px;
+}
+
+.app-header {
+	-webkit-animation: app-header 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: app-header 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          
+  font-size: 1.50em;
+  color: white;
+}
+
+ @-webkit-keyframes app-header {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes app-header {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.genre-form {
+	-webkit-animation: genre-form 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+          animation: genre-form 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+          
+  font-size: 15px;
+}
+
+select, option, a {
+  cursor: pointer;
+}
+
+ @-webkit-keyframes genre-form {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes genre-form {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 p {
@@ -33,6 +139,36 @@ a {
 }
 
 footer {
-  border: solid black 1px;
-  padding: 1% 0;
+  padding: 5px;
+  margin-bottom: 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.7);;
+}
+
+@media only screen and (min-width: 320px) {
+  body {
+    width: 100%;
+    background-position: center;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .game-container {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .game-container {
+    max-width: 100%;
+  }
+
+  #header {
+      width: 50vw;
+  }
 }

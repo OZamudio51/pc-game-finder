@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
+// GenreSelector Component
+
 class GenreSelector extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,8 @@ class GenreSelector extends React.Component {
 
     this.handleGenreSubmit = this.handleGenreSubmit.bind(this);
   }
+
+  // handles the submission of the genre once it's chosen
 
   handleGenreSubmit = (e) => {
     e.preventDefault();
@@ -27,12 +31,16 @@ class GenreSelector extends React.Component {
     this.props.history.push(`/genre/${e.target.value}`);
   };
 
+  // renders the form for the genre selection
+
   render() {
     return (
       <div>
         <section>
-          <form htmlFor="genre-selector">
-            <label htmlFor="genre">Select a genre to get started: </label>
+          <form htmlFor="genre-selector" className="genre-form">
+            <label htmlFor="genre" style={{ color: "white" }}>
+              Select a genre to get started:{" "}
+            </label>
             <select
               title="genre"
               className="genre-selection"
